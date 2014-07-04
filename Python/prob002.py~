@@ -1,0 +1,20 @@
+f1, f2, ans = 1, 1, 0
+while f1+f2 < 4000000:
+    f3 = f1+f2
+    if f3%2 == 0: ans += f3
+    f1, f2 = f2, f3
+print ans
+
+"""
+# ‘æ0-2€‚Ü‚Å’è‹`
+fibo_seq = [0, 1, 1]
+
+i = 3
+ans = 0
+while(1):
+    fibo_seq.append(fibo_seq[i-1]+fibo_seq[i-2])
+    if fibo_seq[i] > 4000000: break
+    if fibo_seq[i]%2 == 0: ans += fibo_seq[i]
+    i = i+1
+print ans
+"""
