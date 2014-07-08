@@ -1,6 +1,5 @@
 ProjectEuler
 ============
-
-Author
-============
-Shuhei Fujiwara
+Project Eulerは死んだんだ
+いくら呼んでも帰っては来ないんだ
+もうあの時間は終わって、君も人生と向き合う時なんだ
