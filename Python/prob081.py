@@ -17,3 +17,5 @@ for i in xrange(80):
         elif i==0: mat[i][j] = mat[i][j-1] + mat[i][j]
         elif j==0: mat[i][j] = mat[i-1][j] + mat[i][j]
         else: mat[i][j] = min(mat[i-1][j], mat[i][j-1]) + mat[i][j]
+
+print mat[-1][-1]
