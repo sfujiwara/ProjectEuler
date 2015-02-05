@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+## Answer: 142913828922
+
 import math
 
 # エラトステネスの篩でn以下の素数列を返す関数
@@ -12,4 +14,5 @@ def sieve(n):
             for j in xrange(i*2, n+1, i): flag[j] = False
     return [i for i in xrange(n+1) if flag[i]]
 
-print "Answer =", sum(sieve(2000000))
+if __name__ == '__main__':
+    print 'Answer:', sum(sieve(2000000))
