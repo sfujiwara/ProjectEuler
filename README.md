@@ -11,3 +11,7 @@ https://projecteuler.net/
 
 日本語 wiki:  
 http://odz.sakura.ne.jp/projecteuler/
+
+---
+
+![alt text](https://projecteuler.net/profile/taiyaki.png)
