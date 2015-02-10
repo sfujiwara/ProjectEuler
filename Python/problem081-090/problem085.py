@@ -3,11 +3,12 @@
 '''
 とりあえす 1 <= row <= 2000, row <= col <= 2000 としている.
 count_rectangular(1, 2000) >= 2000000 なので, この範囲には答えがある.
-ループの範囲を真面目に絞っていないので, 5分以上掛かってしまう.
+ループの範囲を真面目に絞っていないので, 8 分くらい掛かってしまう.
 実は最初に 1 <= row <= 2000, 1 <= col <= 100 で試したら
 あっさり答えが出てしまった.
 '''
 
+## row * col グリッドに含まれる長方形を数える関数
 def count_rectangular(row, col):
     count = 0
     for i in range(1, row+1):
@@ -15,6 +16,9 @@ def count_rectangular(row, col):
             count += (row - i + 1) * (col - j + 1)
     return count
 
+## リスト内包表記だと可読性が酷い気がする
+## def count_rectangular(row, col):
+##     return sum(sum((row-i+1) * (col-j+1) for j in range(1, col+1)) for i in range(1, row+1))
 
 if __name__ == '__main__':
     ans = 0
