@@ -32,4 +32,4 @@ if __name__ == '__main__':
                 min_diff = abs(num_rect - 2000000)
             if num_rect > 2000000:
                 break
-    print ans
+    print 'Answer:', ans
