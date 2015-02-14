@@ -6,7 +6,7 @@
 # 正解者用のドキュメントを参考にかなり高速化したので桁がいくつか増えても大丈夫
 def pfd(n):
     prime_factors = []
-    max_factor = n**0.5
+    upper_threshold = n**0.5
     # 後のループを奇数だけで回すために, 2 だけ場合分けする
     if n % 2 == 0:
         factor = 2
@@ -19,7 +19,7 @@ def pfd(n):
     factor = 3
     while n > 1:
         # √n を超える素数は調べる必要がない
-        if factor > max_factor:
+        if factor > upper_threshold:
             prime_factors.append([n, 1])
             break
         # 割り続けて素因数 factor を取り除く
