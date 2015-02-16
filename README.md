@@ -14,4 +14,4 @@ http://odz.sakura.ne.jp/projecteuler/
 
 ---
 
-![alt text](https://projecteuler.net/profile/taiyaki.png)
+![alt text](http://projecteuler.net/profile/fujiwara.png)
