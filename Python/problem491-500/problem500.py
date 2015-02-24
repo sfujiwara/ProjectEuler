@@ -5,11 +5,9 @@
 N = 2^(2^a1 - 1) + 3^(2^a2 - 1) + 5^(2^a3 - 1) + 7^(2^a4 - 1) + ...
 このとき,
 a1, a2, ... のいずれかを 1 増やすと, N の約数の個数は 2 倍になる.
-'''
 
-'''
-未解答.
-多分数時間かければ解ける.
+1 日くらい放置しておけば解ける.
+どうすればこれ以上速くなるのかわからない.
 '''
 
 import math
@@ -27,7 +25,8 @@ def sieve(n):
     return [i for i in xrange(n+1) if flag[i]]
 
 if __name__ == '__main__':
-    primes = sieve(1000000)
+    primes = sieve(10000000)
+    print 'Generated Prime Numbers List'
     a = [0] * len(primes)
     cnt = 1
     ## a[i] を 1 増やすと何倍になるかを表す配列
@@ -35,6 +34,7 @@ if __name__ == '__main__':
     ind = 0
     max_ind = 1
     while cnt <= 500500:
+        if cnt % 10000 == 0: print 'cnt:', cnt
         ## ind = min(enumerate(costs), key=lambda x: x[1])[0]
         ind = np.argmin(costs[:(max_ind+2)])
         a[ind] += 1
@@ -45,4 +45,8 @@ if __name__ == '__main__':
             print 'The list of prime numbers is too short'
             break
 
-    print 'Answer:'
+    ans = 1
+    ## 大きい数の冪乗はかなり重いので何とかしたい
+    for i in range(len(a)):
+        ans *= primes[i]**(2**a[i]-1)
+    print 'Answer:', ans % 500500507
