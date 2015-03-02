@@ -3,7 +3,7 @@
 '''
 未完成.
 力ずくでやろうとすると O(n!) で無理だった.
-ハンガリアン法で解けるらしいので, 後で実装してみる.
+ハンガリー法で解けるらしいので, 後で実装してみる.
 '''
 
 import itertools
@@ -27,21 +27,40 @@ if __name__ == '__main__':
 813 883 451 509 615  77 281 613 459 205 380 274 302  35 805
 '''
 
-    ## 先頭と末尾の改行, スペースを削除
-    mat = mat.strip()
-    ## 改行を区切りとしてリスト化
-    mat = mat.splitlines()
-    ## スペースを区切りとして二重リスト化
-    mat = [i.split() for i in mat]
-    ## mat の要素を string -> int に変換
-    mat = [[int(i) for i in j] for j in mat]
-    mat = [[7,53,183,439,863],
-           [497, 383, 563, 79, 973],
-           [287,63,343,169,583],
-           [627,343,773,959,943],
-           [767,473,103,699,303]]
-    n = len(mat)
-    ans = 0
-    for i in itertools.permutations(range(n)):
-        ans = max(ans, sum(mat[j[0]][j[1]] for j in zip(range(n), i)))
-    print 'Answer:', ans
+    ## ## 先頭と末尾の改行, スペースを削除
+    ## mat = mat.strip()
+    ## ## 改行を区切りとしてリスト化
+    ## mat = mat.splitlines()
+    ## ## スペースを区切りとして二重リスト化
+    ## mat = [i.split() for i in mat]
+    ## ## mat の要素を string -> int に変換
+    ## mat = [[int(i) for i in j] for j in mat]
+
+    ## mat_original = [[7,53,183,439,863],
+    ##                 [497, 383, 563, 79, 973],
+    ##                 [287,63,343,169,583],
+    ##                 [627,343,773,959,943],
+    ##                 [767,473,103,699,303]]
+    ## n = len(mat_original)
+
+    ## ## 割り当て問題は普通コスト最小化なので, 最小値を求める問題に変換
+    ## mat_cost = [[0 for i in range(n)] for j in range(n)]
+    ## for i in range(n):
+    ##     for j in range(n):
+    ##         mat_cost[i][j] = 1000 - mat_original[i][j]
+
+    ## ## ここからハンガリー法
+    ## for row in range(n):
+    ##     tmp = min(mat_cost[row])
+    ##     for col in range(n):
+    ##         mat_cost[row][col] -= tmp
+
+    ## for col in range(n):
+    ##     tmp = min(mat_cost[i][col] for i in range(n))
+    ##     for row in range(n):
+    ##         mat_cost[row][col] -= tmp
+
+    ## ans = 0
+    ## for i in itertools.permutations(range(n)):
+    ##     ans = max(ans, sum(mat[j[0]][j[1]] for j in zip(range(n), i)))
+    ## print 'Answer:', ans
