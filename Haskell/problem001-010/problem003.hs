@@ -1,4 +1,4 @@
---pfd' :: Integer -> [Integer] -> [Integer]
+pfd' :: Integer -> [Integer] -> [Integer]
 pfd' n (x:xs)
   | n < 0         = (-1):(pfd' (-n) (x:xs))
   | n == 1        = []
