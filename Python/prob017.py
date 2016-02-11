@@ -1,4 +1,3 @@
-# ®”n‚ğ“ü‚ê‚é‚Æ’PŒê‚Ì’·‚³‚ğ•Ô‚·ŠÖ”
 def get_length(n):
     spell1 = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
     spell2 = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
@@ -12,7 +11,7 @@ def get_length(n):
         print spell2[n%10]
         return len(spell2[n%10])
     
-    if 20<=n<=99:
+    if 20 <= n <= 99:
         print spell10[n/10]+spell1[n%10]
         return len(spell10[n/10]+spell1[n%10])
     
